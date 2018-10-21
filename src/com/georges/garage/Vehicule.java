@@ -1,10 +1,11 @@
 package com.georges.garage;
 
-public class Vehicule {
+public abstract class Vehicule {
     private String description, manufacturer;
     private int speed, year;
-    private String modelName, color;
-    private int[] dimension = new int[3];
+    protected String modelName;
+    private String color;
+    private int[] dimension;
     private int weight;
 
     public Vehicule(String description, String manufacturer, int speed, int year, String modelName, String color, int[] dimension, int weight) {
@@ -18,12 +19,8 @@ public class Vehicule {
         this.weight = weight;
     }
 
-    public void start(){
-        System.out.println("je demare");
-    }
-    public void stop(){
-        System.out.println("je m'arete");
-    }
+    public abstract void start();
+    public abstract void stop();
 
     public String getDescription() {
         return description;
