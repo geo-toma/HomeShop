@@ -30,4 +30,40 @@ public class Bill {
     public Map<Product, Integer> getProducts() {
         return products;
     }
+
+    public void generate(Writer writer){
+        writer.start();
+        writer.writeLine("HomeShop company");
+        writer.writeLine("1 place Charles de Georges, ma maison Adress");
+        writer.writeLine("");
+        writer.writeLine("Facture a l'intension de :");
+        writer.writeLine(customer.getFullName());
+        writer.writeLine(customer.getAddress());
+        writer.writeLine("");
+        writer.writeLine("Mode de livraison : "+delivery.getInfo());
+        writer.writeLine("");
+        writer.writeLine("Produits :");
+        writer.writeLine("----------------------------------------------------------------");
+        for (Map.Entry<Product, Integer> produit : products.entrySet()){
+            Product product = produit.getKey();
+            Integer quantity = produit.getValue();
+            writer.writeLine(product.getName()+" - "+product.getPrice()+" - "+quantity+" unity");
+            writer.writeLine(product.getDescrition());
+            writer.writeLine("");
+        }
+        writer.writeLine("Livraison : "+delivery.getPrice());
+        writer.writeLine("----------------------------------------------------------------");
+        writer.writeLine("Total : "+getTotal());
+        writer.stop();
+    }
+
+    public double getTotal(){
+        double total = 0;
+        for (Map.Entry<Product, Integer> entry : products.entrySet()){
+            Product product = entry.getKey();
+            Integer quantity = entry.getValue();
+            total+=product.getPrice()*quantity;
+        }
+        return total;
+    }
 }
