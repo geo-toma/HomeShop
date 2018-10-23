@@ -8,7 +8,7 @@ public class Main {
         grandFour.capacity=10;
 
         cake.nom="cake aux fruis";
-        grandFour.cuire(cake);
+        grandFour.cuire(cake, 20);
         System.out.println("");
         cake.manger();
     }

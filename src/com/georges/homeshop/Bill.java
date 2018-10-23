@@ -32,6 +32,8 @@ public class Bill {
     }
 
     public void generate(Writer writer){
+        if (products.isEmpty())
+            throw new NoProductBillException();
         writer.start();
         writer.writeLine("HomeShop company");
         writer.writeLine("1 place Charles de Georges, ma maison Adress");

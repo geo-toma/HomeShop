@@ -31,7 +31,7 @@ class BillTest {
     private Delivery wayToDeliver = new ExpressDelivery("Paris");
 
     @Test
-    public void Given_2ProductsToDeliver_WhenWritingFile_ThenGetLineNumber(){
+    public void Given_2ProductsToDeliver_When_WritingFile_ThenGetLineNumber(){
         Bill bill = new Bill(customer, wayToDeliver);
         bill.addProduct(cafe,1);
         bill.addProduct(tv,1);
@@ -41,12 +41,18 @@ class BillTest {
     }
 
     @Test
-    public void Given_3ProductsToDeliver_WhenWritingFile_ThenGetTotalPrice(){
+    public void Given_3ProductsToDeliver_When_WritingFile_ThenGetTotalPrice(){
         Bill bill = new Bill(customer, wayToDeliver);
         bill.addProduct(cafe,1);
         bill.addProduct(tv,1);
         bill.addProduct(fridge,1);
         assertEquals(868.45, bill.getTotal(), 0.01);
+    }
+
+    @Test
+    public void Given_EmptyProductList_When_WrittingFile_Then_ThrowException(){
+        Bill bill = new Bill(customer, wayToDeliver);
+        assertThrows(NoProductBillException.class, () -> bill.generate(writeMock));
     }
 
 }

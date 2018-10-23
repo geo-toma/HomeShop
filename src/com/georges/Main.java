@@ -18,11 +18,15 @@ public class Main {
 
         Bill bill = new Bill(customer, delivery);
 
-        bill.addProduct(cafe,1);
+        /*bill.addProduct(cafe,1);
         bill.addProduct(tv,1);
-        bill.addProduct(fridge,1);
+        bill.addProduct(fridge,1);*/
 
-        bill.generate(new FileWrite("billfile"));
+       try {
+           bill.generate(new FileWrite("billfile"));
+       } catch (NoProductBillException e) {
+           System.err.println("il n'ya pas de produit ajoute a la facture");
+       }
 
        /** Vehicule bateau = new Boat("c'est un bateau", "entreprise",200,2020,"modol","blanche", new int[]{1, 2, 3},200);
         bateau.start();
