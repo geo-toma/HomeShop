@@ -14,4 +14,8 @@ public class Boat extends Vehicule {
     public void stop() {
 
     }
+
+    public void floter(){
+
+    }
 }

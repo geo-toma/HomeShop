@@ -1,6 +1,8 @@
 package com.georges.homeshop;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 public class Bill {
@@ -30,6 +32,9 @@ public class Bill {
     public Map<Product, Integer> getProducts() {
         return products;
     }
+
+
+    //List<List<String>> sentences = new ArrayList<List<String>>();
 
     public void generate(Writer writer){
         if (products.isEmpty())

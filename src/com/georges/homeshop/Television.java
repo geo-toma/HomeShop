@@ -17,4 +17,7 @@ public class Television extends Product {
     public String getSlabType() {
         return slabType;
     }
+    public void allumer(){
+
+    }
 }
