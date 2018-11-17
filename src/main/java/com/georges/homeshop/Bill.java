@@ -44,8 +44,8 @@ public class Bill {
         writer.writeLine("1 place Charles de Georges, ma maison Adress");
         writer.writeLine("");
         writer.writeLine("Facture a l'intension de :");
-        writer.writeLine(customer.getFullName());
-        writer.writeLine(customer.getAddress());
+        writer.writeLine(customer.getFullName().replaceAll("\\+"," "));
+        writer.writeLine(customer.getAddress().replaceAll("\\+", " "));
         writer.writeLine("");
         writer.writeLine("Mode de livraison : "+delivery.getInfo());
         writer.writeLine("");
