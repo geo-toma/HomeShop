@@ -8,18 +8,18 @@
 
     <servlet>
 
-        <servlet-name>HelloWorld</servlet-name>
+        <servlet-name>Bill</servlet-name>
 
-        <servlet-class>com.georges.homeshop.web.HelloWorldServlet</servlet-class>
+        <servlet-class>com.georges.homeshop.web.BillServlet</servlet-class>
 
     </servlet>
 
 
     <servlet-mapping>
 
-        <servlet-name>HelloWorld</servlet-name>
+        <servlet-name>Bill</servlet-name>
 
-        <url-pattern>/georgessiteweb</url-pattern>
+        <url-pattern>/bill</url-pattern>
 
     </servlet-mapping>
 

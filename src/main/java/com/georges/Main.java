@@ -17,9 +17,9 @@ public class Main {
 
         Bill bill = new Bill(customer, delivery);
 
-        /*bill.addProduct(cafe,1);
+        bill.addProduct(cafe,1);
         bill.addProduct(tv,1);
-        bill.addProduct(fridge,1);*/
+        bill.addProduct(fridge,1);
 
        try {
            bill.generate(new FileWrite("billfile"));
