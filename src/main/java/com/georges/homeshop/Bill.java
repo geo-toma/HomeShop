@@ -8,7 +8,7 @@ import java.util.Map;
 public class Bill {
 
     private Customer customer;
-    private Map<Product, Integer> products = new HashMap<Product, Integer>();
+    private Map<Product, Integer> products = new HashMap<>();
     private Delivery delivery;
 
     public Bill(Customer customer, Delivery delivery) {
@@ -32,9 +32,6 @@ public class Bill {
     public Map<Product, Integer> getProducts() {
         return products;
     }
-
-
-    //List<List<String>> sentences = new ArrayList<List<String>>();
 
     public void generate(Writer writer){
         if (products.isEmpty())

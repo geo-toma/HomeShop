@@ -50,7 +50,7 @@ class BillTest {
     }
 
     @Test
-    public void Given_EmptyProductList_When_WrittingFile_Then_ThrowException(){
+    public void Given_EmptyProductList_When_WritingFile_Then_ThrowException(){
         Bill bill = new Bill(customer, wayToDeliver);
         assertThrows(NoProductBillException.class, () -> bill.generate(writeMock));
     }
